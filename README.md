@@ -1,2 +1,3 @@
 # clickable-svg
-An image map type appearance in which you can click on an image region as a response. 
+
+*Pleane note: this field plug-in is in active development and is not yet ready to be used or tested.
