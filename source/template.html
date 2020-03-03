@@ -1,0 +1,50 @@
+<div class="label default-question-text-size">{{{LABEL}}}</div>
+
+<!-- If there is an image specified in the media:image column, show it here -->
+{{#MEDIAIMAGE}}
+    <img src="{{MEDIAIMAGE}}" />
+{{/MEDIAIMAGE}}
+
+<!-- If there is audio specified in the media:audio column, show it here -->
+{{#MEDIAAUDIO}}
+    <audio controls>
+        <source src="{{MEDIAAUDIO}}">
+        Your browser does not support the audio element.
+    </audio>
+{{/MEDIAAUDIO}}
+
+<!-- If there is a video specified in the media:video column, show it here -->
+{{#MEDIAVIDEO}}
+    <video width="100%" height="*" controls>
+        <source src="{{MEDIAVIDEO}}">
+        Your browser does not support the video tag.
+    </video>
+{{/MEDIAVIDEO}}
+
+<div class="hint default-hint-text-size">{{{HINT}}}</div>
+
+<!-- If the field is marked read only, then only show the input box if there is a current answer. -->
+{{#READONLY}}
+    {{#CURRENT_ANSWER}}
+    <input 
+        type="text" 
+        value="{{CURRENT_ANSWER}}" 
+        id="text-field" 
+        class="response default-answer-text-size" 
+        readonly
+    />
+    {{/CURRENT_ANSWER}}
+{{/READONLY}}
+
+<!-- if the field is not marked read only, show the input box always. -->
+{{^READONLY}}
+<input 
+    type="text" 
+    value="{{CURRENT_ANSWER}}" 
+    id="text-field" 
+    class="response default-answer-text-size" 
+    placeholder="Your answer here..." 
+/>
+{{/READONLY}}
+
+
