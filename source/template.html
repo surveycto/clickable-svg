@@ -2,7 +2,11 @@
 
 <!-- If there is an image specified in the media:image column, show it here -->
 {{#MEDIAIMAGE}}
-    <img src="{{MEDIAIMAGE}}" />
+    <object data="{{MEDIAIMAGE}}" type="image/svg+xml">Opps! Your device doesn't support SVG images. Please enter your response manually.</object>
+{{/MEDIAIMAGE}}
+{{^MEDIAIMAGE}}
+    <h3>Missing image</h3>
+    <p>This field plug-in requires an SVG image. Please attach an image to the field.</p>
 {{/MEDIAIMAGE}}
 
 <!-- If there is audio specified in the media:audio column, show it here -->
