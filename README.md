@@ -34,7 +34,6 @@ This plug-in allows you to click on a part of an image and record which part was
 ## More resources
 
 * **Test form**  
-You can find a form definition and an .svg image in this repo here: [extras/test-form](extras/test-form). This form will help you compare your text field plug-in to the default text field. [Click here for instructions](/extras/test-form/README.md).
-
-* **Developer documentation**  
-More instructions for developing and using field plug-ins can be found here: [https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
+[extras/test-form](extras/test-form)
+* **Developer documentation for field plug-ins**  
+More instructions for developing and using field plug-ins. [https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
