@@ -1,6 +1,6 @@
 # Clickable SVG
 
-![](extras/preview.jpg)
+![](extras/clickable-svg.jpg)
 
 ## Description
 
