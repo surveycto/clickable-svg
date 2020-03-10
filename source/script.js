@@ -1,46 +1,78 @@
 // References to field elements
 var input = document.getElementById('text-field');
-var defaultPathFill = "rgba(0,0,0,.4)";
-var selectedPathFill = "#047CC2";
+var defaultObjectFill = "rgba(0,0,0,.4)";
+var selectedObjectFill = "#047CC2";
 var textColor = "rgba(0,0,0,.4)";
 var svgImage = document.getElementById("svg-image");
 var svgDoc;
-var svgPaths;
+var svgObjects;
+var svgObjectsType;
 
-function clickPath(id) {
+function clickObject(id) {
     input.value = id; // set the value of the input box
     setAnswer(input.value); // update the field's current answer
-    highlightSelectedPath(); // highlight selected path
+    highlightSelectedObject(); // highlight selected Object
 }
 
-function highlightSelectedPath() {
+function highlightSelectedObject() {
     setAllColorsToDefault(); // set all the colors to default
-    var currentPath = svgDoc.getElementById(input.value); // get reference to selected element
-    if (currentPath) { // check if element exists
-        currentPath.setAttribute("fill", selectedPathFill); // update color
+    var currentObject = svgDoc.getElementById(input.value); // get reference to selected element
+    if (currentObject) { // check if element exists
+        if (svgObjectsType == 'groups') {
+            // if the svg contains groups of paths, then we need to set the color of each path within the selected group
+            var groupPaths = currentObject.querySelectorAll('path');
+            for (var i = 0; i < groupPaths.length; i++) {
+                groupPaths[i].setAttribute("fill", selectedObjectFill);
+                groupPaths[i].style.fill = selectedObjectFill;
+            }
+        } else {
+            currentObject.setAttribute("fill", selectedObjectFill);
+            currentObject.style.fill = selectedObjectFill;
+        }
+        
     }
 }
 
 function setAllColorsToDefault() {
-    for (var i = 0; i < svgPaths.length; i++) {
-        svgPaths[i].setAttribute("fill", defaultPathFill);
-    }
-}
-
-function setClickablePaths() {
-    for (var i = 0; i < svgPaths.length; i++) {
-        svgPaths[i].onclick = function() {
-            clickPath(this.id);
+    if (svgObjectsType == 'groups') {
+        // if the svg contains groups of paths, then we need to set the color of each path within each group
+        for (var i = 0; i < svgObjects.length; i++) {
+            var groupPaths = svgObjects[i].querySelectorAll('path');
+            for (var i2 = 0; i2 < groupPaths.length; i2++) {
+                groupPaths[i2].setAttribute("fill", defaultObjectFill);
+                groupPaths[i2].style.fill = defaultObjectFill;
+            }
+        }
+    } else {
+        // if the svg only contains paths, then we can set the color of the paths directly
+        for (var i = 0; i < svgObjects.length; i++) {
+            svgObjects[i].setAttribute("fill", defaultObjectFill);
+            svgObjects[i].style.fill = defaultObjectFill;
         }
     }
 }
 
-// we need to wait for the SVG to load in order to access the IDs of the paths
+function setClickableObjects() {
+    for (var i = 0; i < svgObjects.length; i++) {
+        svgObjects[i].onclick = function() {
+            clickObject(this.id);
+        }
+    }
+}
+
+// we need to wait for the SVG to load in order to access the IDs of the Objects
 svgImage.addEventListener('load', function() {
     svgDoc = svgImage.contentDocument;
-    svgPaths = svgDoc.querySelectorAll('path');
-    highlightSelectedPath();
-    setClickablePaths();
+    // check the svg image to see if it uses groups or paths as the identifiable objects in the image
+    if (svgDoc.querySelector('g').hasAttribute('id')) { // if there is a <g> element in the svg, then it uses groups
+        svgObjectsType = 'groups';
+        svgObjects = svgDoc.querySelectorAll('g');
+    } else { // otherwise, it uses paths
+        svgObjectsType = 'paths';
+        svgObjects = svgDoc.querySelectorAll('path');
+    }
+    highlightSelectedObject();
+    setClickableObjects();
 }, true);
 
 // Define what happens when the user attempts to clear the response
@@ -52,7 +84,7 @@ function clearAnswer() {
 // Save the user's response (update the current answer)
 input.oninput = function() {
     setAnswer(input.value);
-    highlightSelectedPath();
+    highlightSelectedObject();
 };
 
 // check for standard appearance options and apply them

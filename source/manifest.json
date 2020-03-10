@@ -1,7 +1,7 @@
 {
 	"name" : "Clickable SVG",
 	"author" : "Dobility",
-	"version": "1.0.34",
+	"version": "1.0.49",
 	"supportedFieldTypes": ["text"],
 	"hideDefaultRequiredMessage": false,
 	"hideDefaultConstraintMessage": false
