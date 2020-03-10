@@ -1,8 +1,7 @@
 // References to field elements
 var input = document.getElementById('text-field');
-var defaultObjectFill = "rgba(0,0,0,.4)";
-var selectedObjectFill = "#047CC2";
-var textColor = "rgba(0,0,0,.4)";
+var defaultObjectOpactiy = '.4';
+var selectedObjectOpacity = '1';
 var svgImage = document.getElementById("svg-image");
 var svgDoc;
 var svgObjects;
@@ -22,12 +21,10 @@ function highlightSelectedObject() {
             // if the svg contains groups of paths, then we need to set the color of each path within the selected group
             var groupPaths = currentObject.querySelectorAll('path');
             for (var i = 0; i < groupPaths.length; i++) {
-                groupPaths[i].setAttribute("fill", selectedObjectFill);
-                groupPaths[i].style.fill = selectedObjectFill;
+                groupPaths[i].style.opacity = selectedObjectOpacity;
             }
         } else {
-            currentObject.setAttribute("fill", selectedObjectFill);
-            currentObject.style.fill = selectedObjectFill;
+            currentObject.style.opacity = selectedObjectOpacity;
         }
         
     }
@@ -39,15 +36,13 @@ function setAllColorsToDefault() {
         for (var i = 0; i < svgObjects.length; i++) {
             var groupPaths = svgObjects[i].querySelectorAll('path');
             for (var i2 = 0; i2 < groupPaths.length; i2++) {
-                groupPaths[i2].setAttribute("fill", defaultObjectFill);
-                groupPaths[i2].style.fill = defaultObjectFill;
+                groupPaths[i2].style.opacity = defaultObjectOpactiy;
             }
         }
     } else {
         // if the svg only contains paths, then we can set the color of the paths directly
         for (var i = 0; i < svgObjects.length; i++) {
-            svgObjects[i].setAttribute("fill", defaultObjectFill);
-            svgObjects[i].style.fill = defaultObjectFill;
+            svgObjects[i].style.opacity = defaultObjectOpactiy;
         }
     }
 }
