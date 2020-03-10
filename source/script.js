@@ -59,20 +59,23 @@ function setClickableObjects() {
         }
     }
 }
+// hide the svg until it's done loading
+svgImage.style.opacity = 0;
 
-// we need to wait for the SVG to load in order to access the IDs of the Objects
+// we need to wait for the SVG to load in order to access the IDs of the objects it contains
 svgImage.addEventListener('load', function() {
     svgDoc = svgImage.contentDocument;
     // check the svg image to see if it uses groups or paths as the identifiable objects in the image
-    if (svgDoc.querySelector('g').hasAttribute('id')) { // if there is a <g> element in the svg, then it uses groups
+    if (svgDoc.querySelector('g').hasAttribute('id')) { // if there is a <g> element with an ID, then it uses groups as the clickable objects
         svgObjectsType = 'groups';
         svgObjects = svgDoc.querySelectorAll('g');
-    } else { // otherwise, it uses paths
+    } else { // otherwise, it uses paths as the clickable objects
         svgObjectsType = 'paths';
         svgObjects = svgDoc.querySelectorAll('path');
     }
-    highlightSelectedObject();
-    setClickableObjects();
+    highlightSelectedObject(); // highlight the selected object (if one exists)
+    setClickableObjects(); // make all the objects clickable
+    svgImage.style.opacity = 1; // show the svg
 }, true);
 
 // Define what happens when the user attempts to clear the response
