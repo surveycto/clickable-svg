@@ -29,7 +29,7 @@ This plug-in allows you to click on a part of an image and record which part was
 1. Attach this plug-in to the text field.
 1. When you fill out the form and click on a path in the .svg image, the ID value of that path will be entered into the text field and stored as the response data.
 
-**Note:** since the ID values from within the .svg image will be used to update the field response, it is recommended that you make sure they are named appropriately. Check out the [test-form](extras/test-form) and the two associated .svg files to see examples. See below for links to some other resources which might help you.
+**Note:** since the ID values from within the .svg image will be used to update the field response, it is recommended that you make sure they are named appropriately. Each clickable region should have a unique ID. Check out the [test-form](extras/test-form) and the two associated .svg files to see examples. See below for links to some other resources which might help you.
 
 ## More resources
 
