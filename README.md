@@ -37,5 +37,7 @@ This plug-in allows you to click on a part of an image and record which part was
 [extras/test-form](extras/test-form)
 * **How to Optimize and Export SVGs in Adobe Illustrator**  
 [https://www.sitepoint.com/crash-course-optimizing-and-exporting-svgs-in-adobe-illustrator/](https://www.sitepoint.com/crash-course-optimizing-and-exporting-svgs-in-adobe-illustrator/)
+* **Free online SVG creator and editor**  
+[https://vectr.com/](https://vectr.com/)
 * **Developer documentation for field plug-ins**  
 More instructions for developing and using field plug-ins. [https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
