@@ -25,16 +25,21 @@ This plug-in allows you to click on a part of an image and record which part was
 ## How to use
 
 1. Create a text field.
-1. Attach an .svg image to that text field (using the media:image field property).
+1. Attach an .svg image file to that text field (using the media:image field property).
 1. Attach this plug-in to the text field.
-1. When you fill out the form and click on a path in the .svg image, the ID value of that path will be entered into the text field and stored as the response data.
+1. When you fill out the form and click on a region in the image, the ID value of that region will be entered into the text field and stored as the response data.
 
-**Note:** since the ID values from within the .svg image will be used to update the field response, it is recommended that you make sure they are named appropriately. Each clickable region should have a unique ID. Check out the [test-form](extras/test-form) and the two associated .svg files to see examples. See below for links to some other resources which might help you.
+**Notes about your .svg file**  
+Each selectable region must have a unique ID attribute. If you create your .svg file using Adobe Illustrator or Vectr, this should be done automatically. If you create your .svg file using Inkscape, or you are using an .svg file that you got from somewhere else, you may need to edit it yourself to make sure that only the selectable regions have ID attributes. Check out the [test-form](extras/test-form) and the two associated .svg files to see examples. See below for links to some other resources which might help you.
 
 ## More resources
 
 * **Test form**  
 [extras/test-form](extras/test-form)
+* **Free tools for creating .svg files**  
+[https://vectr.com/](https://vectr.com/)  
+[https://inkscape.org/](https://inkscape.org/)  
+[https://www.sketch.com/](https://www.sketch.com/)  
 * **How to Optimize and Export SVGs in Adobe Illustrator**  
 [https://www.sitepoint.com/crash-course-optimizing-and-exporting-svgs-in-adobe-illustrator/](https://www.sitepoint.com/crash-course-optimizing-and-exporting-svgs-in-adobe-illustrator/)
 * **Free online SVG creator and editor**  
