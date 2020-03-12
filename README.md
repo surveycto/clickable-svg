@@ -42,7 +42,5 @@ Each selectable region must have a unique ID attribute. If you create your .svg 
 [https://www.sketch.com/](https://www.sketch.com/)  
 * **How to Optimize and Export SVGs in Adobe Illustrator**  
 [https://www.sitepoint.com/crash-course-optimizing-and-exporting-svgs-in-adobe-illustrator/](https://www.sitepoint.com/crash-course-optimizing-and-exporting-svgs-in-adobe-illustrator/)
-* **Free online SVG creator and editor**  
-[https://vectr.com/](https://vectr.com/)
 * **Developer documentation for field plug-ins**  
 More instructions for developing and using field plug-ins. [https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
