@@ -4,7 +4,7 @@
 
 ## Description
 
-This plug-in allows you to click on a part of an image and record which part was clicked. Clicking on a named region (either a path or a group of paths with an ID) in an .svg image will select that region, and fill in the text field with the ID of the region. To help indicate which region is currently selected, all regions will start out at 40% opacity. When selected, a region will return to 100% opacity.
+This field plug-in allows you to click on a part of an image and record which part was clicked. Clicking on a named region (either a path or a group of paths with an ID) in an .svg image will select that region, and fill in the text field with the ID of the region. To help indicate which region is currently selected, all regions will start out at 40% opacity. When selected, a region will return to 100% opacity.
 
 ## Default SurveyCTO feature support
 
@@ -26,7 +26,7 @@ This plug-in allows you to click on a part of an image and record which part was
 
 1. Create a text field.
 1. Attach an .svg image file to that text field (using the media:image field property).
-1. Attach this plug-in to the text field.
+1. Attach this field plug-in to the text field.
 1. When you fill out the form and click on a region in the image, the ID value of that region will be entered into the text field and stored as the response data.
 
 **Notes about your .svg file**  
