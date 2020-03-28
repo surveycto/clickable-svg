@@ -6,6 +6,8 @@
 
 This plug-in allows you to click on a part of an image and record which part was clicked. Clicking on a named region (either a path or a group of paths with an ID) in an .svg image will select that region, and fill in the text field with the ID of the region. To help indicate which region is currently selected, all regions will start out at 40% opacity. When selected, a region will return to 100% opacity.
 
+[![Download now](extras/download-button.png)](https://github.com/surveycto/clickable-svg/raw/master/clickable-svg.fieldplugin.zip)
+
 ## Default SurveyCTO feature support
 
 | Feature / Property | Support |
@@ -18,9 +20,9 @@ This plug-in allows you to click on a part of an image and record which part was
 | media:image | Yes (required) |
 | media:audio | Yes |
 | media:video | Yes |
-| `numbers` appearance | Yes |
-| `numbers-decimal` appearance | Yes |
-| `numbers-phone` appearance | Yes |
+| `numbers` appearance | No |
+| `numbers-decimal` appearance | No |
+| `numbers-phone` appearance | No |
 
 ## How to use
 
@@ -34,13 +36,18 @@ Each selectable region must have a unique ID attribute. If you create your .svg 
 
 ## More resources
 
-* **Test form**  
-[extras/test-form](extras/test-form)
+* **Example form**  
+Use this example form to quickly learn the basics of how this field plug-in works.  
+[Download example form package](https://github.com/surveycto/clickable-svg/raw/master/extras/example-form/example-form-package-clickable-svg.zip)
 * **Free tools for creating .svg files**  
 [https://vectr.com/](https://vectr.com/)  
 [https://inkscape.org/](https://inkscape.org/)  
 [https://www.sketch.com/](https://www.sketch.com/)  
 * **How to Optimize and Export SVGs in Adobe Illustrator**  
 [https://www.sitepoint.com/crash-course-optimizing-and-exporting-svgs-in-adobe-illustrator/](https://www.sitepoint.com/crash-course-optimizing-and-exporting-svgs-in-adobe-illustrator/)
-* **Developer documentation for field plug-ins**  
-More instructions for developing and using field plug-ins. [https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
+* **Developer documentation**  
+Instructions and resources for developing your own field plug-ins.  
+[https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
+* **User documentation**  
+How to get started using field plug-ins in your SurveyCTO form.  
+[https://docs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html](https://docs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html)
